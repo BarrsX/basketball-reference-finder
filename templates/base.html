@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+<html lang="en">
+ <head>
+  {% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   {% block styles %}
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+   {% endblock %}
+
+  <title>{{ name }}</title>
+  {% endblock %}
+ </head>
+    <body>
+     {% block content %}
+      <div style="text-align:center">
+            <div style="text-align:center">
+                <form action="/player" method = "POST">
+                    <p>Enter Player Full Name (ex. LeBron James) <input type = "text" name = "player" /></p>
+                    <p>Enter Year (ex. 2020-21)<input type = "text" name = "year" /></p>
+                    <p><input type = "submit" value = "Submit" /></p>
+                </form>
+            </div>
+       <h1>{{ year }} Stats for {{ name }}</h1>
+       <img src= {{ pic }} />
+       <h2>Stats:</h2>
+       <p style="">{{data | safe}}</p>
+      </div>
+     {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html lang="en">
+     <head>
+      {% block head %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       {% block styles %}
+                <!-- Bootstrap CSS -->
+                {{ bootstrap.load_css() }}
+       {% endblock %}
+         <title>Search</title>
+         {% endblock %}
+ </head>
+    <body>
+    {% block content %}
+        <div style="text-align:center">
+            <form action="/player" method = "POST">
+                <p>Enter Player Full Name (ex. LeBron James) <input type = "text" name = "player" /></p>
+                <p>Enter Year (ex. 2020-21)<input type = "text" name = "year" /></p>
+                <p><input type = "submit" value = "Submit" /></p>
+            </form>
+            <h2>Error, search again!</h2>
+            <h3>Make sure name is spelled correctly and year is formatted correctly.</h3>
+        </div>
+    {% endblock %}
+    </body>
+</html>
